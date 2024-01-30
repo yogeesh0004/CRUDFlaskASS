@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Us and About Us</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+body {
+	
+   background-color: #113311;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='282' height='282' viewBox='0 0 20 20'%3E%3Cg fill-opacity='0.42'%3E%3Cpolygon fill='%23242' points='20 10 10 0 0 0 20 20'/%3E%3Cpolygon fill='%23242' points='0 10 0 20 10 20'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+
+
+.transparent-box {
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	margin-top:15px;
+}
+.contact-heading {
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.contact-info {
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+</style>
+
+<body>
+<nav class="navbar bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"><i class="fa-solid fa-store"></i> <span class="green-background">ProductStore</span> </a>
+
+
+		 <a  href="/" class="btn btn-primary"><i class="fa-solid fa-house-user"></i> Home</a>
+		   </div>
+    </nav>
+ 
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="transparent-box">
+					<div class="contact-heading">Contact Us</div>
+					<div class="contact-info"><i class="fa-solid fa-location-dot"></i> 46,Pavalian Street,Sivakasi</div>
+					<div class="contact-info"><a href="https://github.com/yogeesh0004"><i class="fa-brands fa-github fa-xl"></i> </a>Github Profile</div>
+					<div class="contact-info"><i class="fa-solid fa-phone"></i> 8098023341</div>
+					<div class="contact-info"><i class="fa-solid fa-envelope"></i> yogeeshpavas@gmail.com</div>
+
+					<br>
+					<div class="response-box">
+						<form action="https://formsubmit.co/yogeeshpavas@gmail.com" method="post">
+						
+    <label for="name"><i class="fa-solid fa-user"></i> Name</label><br>
+    <input type="text" id="name" name="name" class="form-control"><br>
+	<label for="exampleInputEmail1"><i class="fa-solid fa-envelope"></i> Email address</label>
+    <input type="email"  name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+	
+	<br>
+    <label for="message"><i class="fa-solid fa-message"></i> Message</label><br>
+    <textarea id="message" name="message" rows="4" cols="50" ></textarea><br><br>
+	<input type="hidden" name="_template" value="table">
+	<input type="hidden" name="_next"  value="http://127.0.0.1:5000">
+	<input type="hidden" name="_autoresponse" value="Welcome to My CRUD APPP">
+	
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+					</div>
+				</div>
+			</div>
+			<script src="https://kit.fontawesome.com/18b9984e04.js" crossorigin="anonymous"></script>
+			
+</body>
+</html>
