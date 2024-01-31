@@ -17,13 +17,6 @@ app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
 
-@app.route('/mail')
-def mail():
-    msg = Message('Hello', sender = 'dummy.python10@gmail.com', recipients = ['dummy.python10@gmail.com'])
-    msg.body = "This is the email body"
-    mail.send(msg)
-    return "Sent"
-app = Flask(__name__)
 app.secret_key="^%$^$^^*&&FGGY9178"
  
  
@@ -57,13 +50,13 @@ db = SQLAlchemy(app)
 # db=SQLAlchemy(app)
  
  
-app.config['MAIL_SERVER']='sandbox.smtp.mailtrap.io'
-app.config['MAIL_PORT'] = 2525
-app.config['MAIL_USE_TLS'] = False
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'yogeeshpavas@gmail.com'  # Replace with your Gmail address
-app.config['MAIL_PASSWORD'] = 'Yogeesh1999$'  # Replace with your Gmail password
-mail = Mail(app)
+# app.config['MAIL_SERVER']='sandbox.smtp.mailtrap.io'
+# app.config['MAIL_PORT'] = 2525
+# app.config['MAIL_USE_TLS'] = False
+# app.config['MAIL_USE_SSL'] = True
+# app.config['MAIL_USERNAME'] = 'yogeeshpavas@gmail.com'  # Replace with your Gmail address
+# app.config['MAIL_PASSWORD'] = 'Yogeesh1999$'  # Replace with your Gmail password
+# mail = Mail(app)
  
  
 # configuration of database tables
@@ -191,7 +184,12 @@ def contactmail():
         return redirect(url_for("home"))
    
    
-   
+@app.route('/mail')
+def mail():
+    msg = Message('Hello', sender = 'dummy.python10@gmail.com', recipients = ['dummy.python10@gmail.com'])
+    msg.body = "This is the email body"
+    mail.send(msg)
+    return "Sent"   
  
    
  
