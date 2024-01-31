@@ -186,8 +186,11 @@ def contactmail():
    
 @app.route('/mail')
 def mail():
+    print("dsdv")
     msg = Message('Hello', sender = 'dummy.python10@gmail.com', recipients = ['dummy.python10@gmail.com'])
     msg.body = "This is the email body"
+    
+    
     mail.send(msg)
     return "Sent"   
  
