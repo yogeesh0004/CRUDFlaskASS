@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key="^%$^$^^*&&FGGY9178"
  
  
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://tap2023:tap2023@APINP-ELPTTQSW3\SQLEXPRESS/crudApp?driver=ODBC+Driver+17+for+SQL+Server'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://ubnu5joorskluqkm:CvubLkhKYsjNI674n656@bfkg0pvnjiimudyocios-mysql.services.clever-cloud.com:3306/bfkg0pvnjiimudyocios'
 db = SQLAlchemy(app)
 # DRIVER_NAME='SQL SERVER'
 # SERVER_NAME='APINP-ELPTTQSW3\SQLEXPRESS'
@@ -94,7 +94,7 @@ def create():
         # query=Products(productName=pName,productDescription=pDesc,rating=pRating,stocks=pStocks,price=pPrice)
         # db.session.add(query)
         # db.session.commit()
-        sql_query=f"INSERT INTO [products] ([productName], [productDescription], [rating], [stocks], [price]) VALUES ('{pName}', '{pDesc}', '{pRating}', '{pStocks}', '{pPrice}')"
+        sql_query=f"INSERT INTO `products` (`productName`, `productDescription`, `rating`, `stocks`, `price`) VALUES ('{pName}', '{pDesc}', '{pRating}', '{pStocks}', '{pPrice}')"
         with db.engine.begin() as conn:
             conn.exec_driver_sql(sql_query)
             flash("Product is Added Successfully","success")
@@ -117,7 +117,7 @@ def update(id):
         # query=Products(productName=pName,productDescription=pDesc,rating=pRating,stocks=pStocks,price=pPrice)
         # db.session.add(query)
         # db.session.commit()
-        sql_query=f"UPDATE [products] SET [productName]='{pName}',[productDescription]='{pDesc}',[rating]='{pRating}',[stocks]='{pStocks}',[price]='{pPrice}' WHERE [pid]='{id}'"
+        sql_query=f"UPDATE `products` SET `productName`='{pName}',`productDescription`='{pDesc}',`rating`='{pRating}',`stocks`='{pStocks}',`price`='{pPrice}' WHERE `pid`='{id}'"
        
         with db.engine.begin() as conn:
             conn.exec_driver_sql(sql_query)
@@ -133,7 +133,7 @@ def update(id):
 @app.route("/delete/<int:id>",methods=['GET'])
 def delete(id):
     # print(id)
-    query=f"DELETE FROM [products] WHERE [pid]={id}"
+    query=f"DELETE FROM `products` WHERE `pid`={id}"
     with db.engine.begin() as conn:
         conn.exec_driver_sql(query)
         flash("Product Deleted Successfully","danger")
