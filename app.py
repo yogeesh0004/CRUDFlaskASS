@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key="^%$^$^^*&&FGGY9178"
  
  
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://tap2023:tap2023@APINP-ELPTTQSW3\SQLEXPRESS/crudApp?driver=SQL Server'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mssql+pyodbc://tap2023:tap2023@APINP-ELPTTQSW3\SQLEXPRESS/crudApp?driver=ODBC+Driver+17+for+SQL+Server'
 db = SQLAlchemy(app)
 # DRIVER_NAME='SQL SERVER'
 # SERVER_NAME='APINP-ELPTTQSW3\SQLEXPRESS'
