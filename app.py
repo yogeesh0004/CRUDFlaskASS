@@ -6,6 +6,23 @@ from flask_mail import Mail, Message
 from flask import Flask,redirect,render_template,request,url_for,flash
 from flask_sqlalchemy import SQLAlchemy
 import pyodbc
+
+app=Flask(__name__)
+
+app.config['MAIL_SERVER']='smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USERNAME'] = 'dummy.python10@gmail.com'
+app.config['MAIL_PASSWORD'] = 'tbkqmfolwjmjwnfk'
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = True
+mail = Mail(app)
+
+@app.route('/mail')
+def mail():
+    msg = Message('Hello', sender = 'dummy.python10@gmail.com', recipients = ['dummy.python10@gmail.com'])
+    msg.body = "This is the email body"
+    mail.send(msg)
+    return "Sent"
 app = Flask(__name__)
 app.secret_key="^%$^$^^*&&FGGY9178"
  
